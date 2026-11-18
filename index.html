@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ten days in the BLR Brats chat</title>
+<meta name="description" content="An anonymised, topic-by-topic recap of the BLR Brats group chat, 9 to 18 November.">
+<style>
+:root{
+  --bg:#F7F5FB; --surface:#FFFFFF; --ink:#1F1B2E; --muted:#5E5873; --line:#DDD8EA;
+  --accent:#6B4FBB; --accent-ink:#FFFFFF; --bar:#F2B705; --bar-hover:#E0A800;
+  --c-community:#6B4FBB; --c-debate:#C4551B; --c-culture:#1F7A74; --c-food:#A67C00;
+  --c-city:#2B6CB0; --c-rules:#B0456B; --c-tech:#3D7F2A;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16131F; --surface:#201C2D; --ink:#EEEAF8; --muted:#B0A9C6; --line:#383250;
+    --accent:#A58BF0; --accent-ink:#16131F; --bar:#C9961A; --bar-hover:#E0AE2A;
+    --c-community:#A58BF0; --c-debate:#F08A56; --c-culture:#4FC3B9; --c-food:#E0B63C;
+    --c-city:#6FB1F0; --c-rules:#EE7FA6; --c-tech:#7FCB62;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16131F; --surface:#201C2D; --ink:#EEEAF8; --muted:#B0A9C6; --line:#383250;
+  --accent:#A58BF0; --accent-ink:#16131F; --bar:#C9961A; --bar-hover:#E0AE2A;
+  --c-community:#A58BF0; --c-debate:#F08A56; --c-culture:#4FC3B9; --c-food:#E0B63C;
+  --c-city:#6FB1F0; --c-rules:#EE7FA6; --c-tech:#7FCB62;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+.wrap{max-width:860px;margin:0 auto;padding:40px 20px 80px}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.2;margin:0}
+h1{font-size:clamp(2rem,5.5vw,3.1rem);letter-spacing:-0.01em}
+.lede{color:var(--muted);max-width:60ch;margin:12px 0 0;font-size:1.05rem}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* day strip: the page's one memorable element */
+.strip{margin-top:32px;padding:20px 12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.strip-title{font-size:.9rem;color:var(--muted);margin:0 8px 10px}
+.days{display:flex;align-items:flex-end;gap:6px;height:190px}
+.day{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px;background:none;border:0;padding:4px 0;cursor:pointer;color:var(--ink);font:inherit;height:100%}
+.day .n{font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.day .bar{width:100%;max-width:44px;height:var(--h);background:var(--bar);border-radius:6px 6px 2px 2px;transition:background .15s,transform .15s}
+.day:hover .bar{background:var(--bar-hover)}
+.day .d{font-size:.82rem;font-weight:600}
+.day[aria-pressed="true"] .bar{background:var(--accent)}
+.day[aria-pressed="true"] .d{color:var(--accent)}
+.day[aria-pressed="true"] .n{color:var(--ink);font-weight:600}
+.strip-foot{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin:12px 8px 0;font-size:.88rem;color:var(--muted)}
+.linkbtn{background:none;border:0;color:var(--accent);font:inherit;font-weight:600;cursor:pointer;padding:2px 0;text-decoration:underline;text-underline-offset:3px}
+
+/* controls */
+.controls{margin:28px 0 8px;display:grid;gap:14px}
+.search{width:100%;padding:12px 14px;font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.search::placeholder{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;font:inherit;font-size:.9rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;cursor:pointer}
+.chip i{width:10px;height:10px;border-radius:50%;background:var(--dot)}
+.chip[aria-pressed="true"]{border-color:var(--dot);box-shadow:inset 0 0 0 1px var(--dot);font-weight:600}
+.status{font-size:.9rem;color:var(--muted);margin:6px 0 0}
+
+/* timeline */
+.day-block{margin-top:44px}
+.day-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.day-head h2{font-size:1.5rem}
+.day-head p{margin:0;color:var(--muted)}
+details.thread{border-left:4px solid var(--dot);margin:0;padding:0;border-bottom:1px solid var(--line)}
+details.thread summary{list-style:none;cursor:pointer;padding:14px 12px 14px 16px;display:block}
+details.thread summary::-webkit-details-marker{display:none}
+details.thread summary:hover{background:color-mix(in srgb,var(--surface) 70%,transparent)}
+.t-top{display:flex;gap:10px;align-items:baseline;justify-content:space-between}
+.t-title{font-family:var(--serif);font-size:1.18rem;font-weight:700}
+.t-tag{font-size:.8rem;color:var(--dot);white-space:nowrap;font-weight:600}
+.t-short{margin:4px 0 0;color:var(--muted);max-width:68ch}
+.t-more{font-size:.85rem;color:var(--accent);margin-top:6px;display:inline-block}
+details[open] .t-more{display:none}
+.t-detail{padding:0 16px 18px 16px;max-width:68ch}
+.t-detail p{margin:0 0 10px}
+mark{background:color-mix(in srgb,var(--bar) 55%,transparent);color:inherit;border-radius:3px;padding:0 2px}
+.empty{padding:36px 8px;color:var(--muted)}
+
+/* spotlight */
+section.panel{margin-top:64px}
+section.panel>h2{font-size:1.7rem}
+.panel-lede{color:var(--muted);max-width:62ch;margin:8px 0 18px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tab{padding:8px 14px;font:inherit;font-size:.92rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.positions{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.pos{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.pos h3{font-size:1rem;margin-bottom:6px}
+.pos p{margin:0;font-size:.95rem;color:var(--muted)}
+.outcome{margin:14px 0 0;max-width:68ch}
+ul.plain{margin:0;padding-left:20px;max-width:68ch}
+ul.plain li{margin:6px 0}
+footer{margin-top:64px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;max-width:68ch}
+.theme-toggle{position:absolute;top:16px;right:16px}
+@media (max-width:560px){
+  .wrap{padding:28px 14px 60px}
+  .days{gap:3px;height:170px}
+  .day .n{font-size:.7rem}
+  .day .d{font-size:.7rem}
+  .t-top{flex-direction:column;gap:2px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Ten days in the BLR Brats chat</h1>
+    <p class="lede">About 3,650 messages between 9 and 18 November, boiled down to what people actually talked about. Pick a day, filter by theme, or search for a topic.</p>
+  </header>
+
+  <section class="strip" aria-labelledby="strip-title">
+    <p class="strip-title" id="strip-title">Messages per day (18 Nov counts up to about 10 AM)</p>
+    <div class="days" id="days" role="group" aria-label="Choose a day"></div>
+    <div class="strip-foot">
+      <span id="strip-note">Showing every day. The busiest was 17 Nov.</span>
+      <button class="linkbtn" id="all-days" type="button">Show all days</button>
+    </div>
+  </section>
+
+  <div class="controls">
+    <input class="search" id="q" type="search" placeholder="Search topics, e.g. biryani, polls, traffic" aria-label="Search the recap">
+    <div class="chips" id="chips" role="group" aria-label="Filter by theme"></div>
+    <p class="status" id="status" aria-live="polite"></p>
+  </div>
+
+  <main id="timeline"></main>
+
+  <section class="panel" aria-labelledby="debates-h">
+    <h2 id="debates-h">Debates worth reading</h2>
+    <p class="panel-lede">The conversations where people disagreed the most. Positions are paraphrased and unattributed.</p>
+    <div class="tabs" id="tabs" role="tablist" aria-label="Pick a debate"></div>
+    <div id="debate" role="tabpanel"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="norms-h">
+    <h2 id="norms-h">How the group runs</h2>
+    <p class="panel-lede">Patterns that showed up across the ten days.</p>
+    <ul class="plain">
+      <li>The organisers run weekend meetups and post event posters. Members are encouraged to meet outside the chat and to plan weekday meetups themselves. Weekend meetups are paused for now.</li>
+      <li>Requests to join a separate event group go to the organiser by direct message, not in the main chat.</li>
+      <li>Self-promotion needs a heads-up to the admins first.</li>
+      <li>The admins delete messages and remove members from time to time. On 12 Nov the organiser said jokes at women’s expense and baiting were the reason. The export does not show the deleted text.</li>
+      <li>Newcomers are asked to introduce themselves. Several asked for message history to catch up, which is why recaps keep coming up.</li>
+      <li>Members used polls to map where everyone lives and how old they are, to plan drives and meetups.</li>
+    </ul>
+  </section>
+
+  <section class="panel" aria-labelledby="open-h">
+    <h2 id="open-h">Questions nobody answered</h2>
+    <p class="panel-lede">Asked in the chat and still without a reply when the export was taken.</p>
+    <ul class="plain">
+      <li>Which gyms are good in HSR?</li>
+      <li>Is anyone else from HSR, for meeting up nearby?</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>This page is a summary written by an AI from an exported copy of the group chat. It uses no names or phone numbers and leaves out personal details, so it can still contain mistakes or miss context, and it is not an official record. If you share it beyond group members, check with the group admins first.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var THEMES = {
+    community:"Meetups and community",
+    debate:"Debates and ideas",
+    culture:"Pop culture and hobbies",
+    food:"Food",
+    city:"Bangalore life",
+    rules:"Group rules",
+    tech:"Tech and AI"
+  };
+
+  var DAYS = [
+    {id:9, label:"9 Nov", count:146, tag:"Personality tests, old gadgets, and the first event ideas", threads:[
+      {t:"Personality tests: MBTI or the Big Five?", g:"debate",
+       s:"The first conversation of the group. Most agreed that tests are only as honest as the person answering.",
+       d:["A psychology-minded member said self-administered tests and their self-interpretation are not always accurate, and pointed people to the Big Five (OCEAN) over MBTI. Another joked that zodiac signs are for people who think too much.","One newcomer said they would rather have someone online while taking the test. Others warned that asking an AI chatbot to interpret results leans on older research and that you should not share your test data."]},
+      {t:"Old tech, cameras and collections", g:"culture",
+       s:"Introductions turned into a swap of hobbies: old digicams, handycams, hot wheels and a hunt for an old iPhone.",
+       d:["One member fixes old digicams and likes handycams for the “open and record” simplicity. Someone wanted an iPhone 5s for photos, and the group debated which iPhone was the peak (4 and 6 both got votes).","A member offered to teach a pinhole camera build. Marketplaces were suggested for old phones, with a reminder that most need a battery swap. A shop in Indiranagar selling ancient cameras came up, and one person asked for a pottery class that is easy on the back."]},
+      {t:"First event ideas", g:"community",
+       s:"The organiser floated a scary-story evening and a member suggested adding a scary movie.",
+       d:["The group was brand new, so this was the first call for event ideas. A pinned reminder asked people not to send requests for a separate event group in the main chat and to message the organiser directly instead."]},
+      {t:"One group chat or two?", g:"rules",
+       s:"The organiser asked if a separate, moderated chat was wanted. A member argued against splitting.",
+       d:["The argument against: multiple chats defeat the purpose of bringing people together and turn into small bubbles where a few talk and the rest watch or stay silent. The member suggested a vote, and the organiser dropped the idea."]},
+      {t:"A concert in December", g:"culture",
+       s:"Two members were leaning towards buying tickets for a Bangalore concert on 28 Dec.",
+       d:["One member could not go because of distance and the evening timing. Another checked how to see their listening stats on a music app."]}
+    ]},
+    {id:10, label:"10 Nov", count:519, tag:"Evolution, firecrackers, and an art-history detour", threads:[
+      {t:"Are humans done evolving?", g:"debate",
+       s:"The organiser asked, and answers ranged from desk-job biology to AI replacing thinking.",
+       d:["Views: desk jobs and plentiful food could change how bodies store fat; evolution needs thousands of years so little will visibly change; and AI is encouraging “cognitive offloading”, so we may be at the last stage of evolution as we know it.","It drifted to a future where nobody has the original records but only AI trained on them, whether digital archives will even be readable, and the learning projectors in Dune.","The organiser asked for a hypothetical positive path. The best joke was that the next species will get a “10,000 years ago today” memory notification."]},
+      {t:"What is this group for?", g:"rules",
+       s:"New members asked. The organisers said anything is on the table except being unkind.",
+       d:["Members shared that they were unsure what the group is about, someone asked whether it was only politics, and a member pointed out that any topic can become political if you want it to. Poster designs for events got compliments."]},
+      {t:"Firecrackers and air quality", g:"debate",
+       s:"People who fought their neighbours or parents over crackers swapped stories, then it became a theory about the cracker trade.",
+       d:["Several members said family bought crackers “for tradition”. One member offered a theory that the unorganised cracker business is a convenient way to turn cash into legitimate income, and linked it to wider talk about real estate prices. This was presented as a theory, not an established fact.","Others added that high property prices come from demand and brand value in tech cities like Bangalore, Gurgaon and Mumbai."]},
+      {t:"Where do you draw the line on judging people?", g:"debate",
+       s:"Everyone judges, so the question became where judgement turns into closing your mind.",
+       d:["Positions: it is natural, and the problem is when judgement is final and does not change with new information; there is always a point you cannot understand, and that is your line; and we are all “selective sinners” who forgive the sins we find acceptable."]},
+      {t:"Traffic, buses and an empty-roads holiday", g:"city",
+       s:"Empty holiday roads made a commute drop from about two hours to under half an hour, which opened up a transport discussion.",
+       d:["Complaints: bikers using footpaths, and bus drivers who race because of daily revenue targets, with buses bunching up and then running overcrowded at peak hours.","One member said driver incentives tied to ridership are very low. Another argued public transport should aim to break even rather than make profit. Free travel for women was debated, and one member who first objected retracted that."]},
+      {t:"Event logistics", g:"community",
+       s:"A meet-cute style event is priced at ₹222 and ₹111 (the organiser said they are “angel numbers”), and dates may shift.",
+       d:["The organiser also asked for volunteers to represent the team at a joust-themed event. A member volunteered and asked whether there would be a horse. The answer was to bring a cycle."]},
+      {t:"From Goya to furries to maid cafés", g:"culture",
+       s:"An art conversation about Goya’s Black Paintings wandered somewhere very different.",
+       d:["It started with Goya becoming darker after going deaf, then Saturn Devouring His Son. A tangent on how many cybersecurity professionals are in the furry community followed, then jokes about Bangalore needing a maid café, and Claude and Codex replacing programmers."]},
+      {t:"Biryani wars", g:"food",
+       s:"Hyderabad, Tamil Nadu, Kerala and Karnataka argued about whose biryani counts.",
+       d:["A member claimed Tamil Nadu biryani is just tomato rice. Others countered with Dindigul, Ambur and Arcot styles and Thalassery biryani, noting that each state has its own name, recipe and form. Ragi mudde with mutton curry joined the chat as a side entry."]},
+      {t:"Anime picks, cats and a cat carnival", g:"culture",
+       s:"Late night anime recommendations and a cat photo thread that ended with a call for a cat carnival.",
+       d:["One member liked Jobless Reincarnation despite a problematic main character and ranked Noragami highly. Persian cats were identified, and one was declared half ginger."]}
+    ]},
+    {id:11, label:"11 Nov", count:340, tag:"Moral philosophy at noon, theatre and CNC by evening", threads:[
+      {t:"Webtoons, anime and a watch party", g:"culture",
+       s:"Korean action webtoons, slice-of-life anime and a plan for an anime watch party.",
+       d:["Members swapped favourites, someone said they wanted to host a watch party and others encouraged them. A horror movie night at a private cinema in Koramangala was mentioned, with finding people through Reddit and an events app."]},
+      {t:"Are we all products of our environment?", g:"debate",
+       s:"A psychology student asked, and the thread became a debate about survival, greed and when bad acts are excusable.",
+       d:["The environment sets how far you can push yourself but people still matter. “Understandable but not okay” became a refrain.","A rich politician looting versus a poor person stealing to feed a family were treated as different cases. Another said paying a bribe for a good education would be wrong but they would do it. A member pushed back that “evil is evil” is a dangerous view because intent, power and necessity matter.","It ended politely on “we agree in parts and disagree on scale and intent”."]},
+      {t:"Food stories and a vegetarian who writes about meat", g:"food",
+       s:"Thai and Naga cuisines turned out to be similar, and a few meat-curious vegetarians confessed.",
+       d:["A member said Thai food is close to Naga food, and another described a Naga food anthropology session hosted by a chef. One vegetarian writes about meat every day without ever eating it. A Mexico-trained chef’s pop-ups and burgers were recommended."]},
+      {t:"Bangalore’s theatre scene", g:"city",
+       s:"Plays, venues and how auditions work.",
+       d:["A member shared a performance at a curated arts venue. Auditions are announced through open calls on social media and word of mouth, theatre companies rent the venue, and booking apps and an Instagram hub were recommended for finding shows."]},
+      {t:"Learning CNC machining", g:"city",
+       s:"Someone wanted to learn CNC near home. After some innuendo, it was explained as reduction manufacturing.",
+       d:["Members pointed to maker spaces, noted that one in Halasuru had moved, and offered business contacts for sourcing. The organiser wanted someone to teach the software and machine handling rather than just buy parts."]}
+    ]},
+    {id:12, label:"12 Nov", count:334, tag:"Growth to 84 members, a seed-scatter plan, and a moderation moment", threads:[
+      {t:"Chiikawa and Nvidia banter", g:"tech",
+       s:"Twerking Chiikawas in work meetings met a debate about Nvidia’s leadership and the AI boom.",
+       d:["It moved from jokes to whether the whole AI industry rests on one company, with some members defending its founder’s record."]},
+      {t:"Reddit shadowban and posting for the group", g:"community",
+       s:"The organiser’s Reddit account was shadowbanned, so she asked for people to post on her behalf.",
+       d:["A member explained that a shadowban reflects your Reddit activity. A member then posted for her and was thanked. The organiser mentioned she designs the posters and event ideas, and a co-organiser handles promotion and logistics."]},
+      {t:"A plan to scatter native flower seeds", g:"community",
+       s:"A guerrilla gardening idea with balsam and marigold seeds in unused spots.",
+       d:["The organiser said local varieties only, and that scattering seeds does not need a civic permit (she planned to double check). Members were cautious about invasive species and where it makes sense to plant, since many pavements are concrete.","They noted that the morning clean-up crews might sweep seeds away, and the organiser offered a donation page if there was enough interest. People joked about how anyone could track them down, then joked that the internet is the gateway to prosecution."]},
+      {t:"Introductions and the member count", g:"community",
+       s:"The group reached 84 and a long round of introductions followed.",
+       d:["Introductions included a chess player and boxer from a local institute, a chartered accountant who runs a marketing agency for bars and cafés, a QA engineer who hosts weekend board game sessions, a data engineer who loves running, and a presentation designer worried about AI taking their job."]},
+      {t:"A moderation moment in the evening", g:"rules",
+       s:"Around 8 PM, messages were deleted and several people were removed.",
+       d:["The organiser said she would not tolerate women being made the butt of jokes or people being contrarian for the sake of it, and that those who did not want to talk with the group should leave. Another member asked everyone to “be normal”. The export does not show the deleted messages.","Later that evening the talk turned back to cooking, miniature cat figurines, and a member asking whether anyone had dealt with addiction."]},
+      {t:"Chilli oil noodles", g:"food",
+       s:"One member asked for authentic chilli oil noodles and got a pointer to chilli garlic noodles at a Hakka place in HSR.",
+       d:["Nobody had a true chilli oil noodle spot to recommend."]}
+    ]},
+    {id:13, label:"13 Nov", count:173, tag:"Interview advice and a lot of baking", threads:[
+      {t:"“Where do you see yourself in five years?”", g:"city",
+       s:"Advice for the classic interview question.",
+       d:["Avoid dark answers, since reality is dark enough. Keep it simple and honest."]},
+      {t:"Coffee, chai and a lot of caffeine", g:"food",
+       s:"Chai for hot and humid days, coffee for functioning, and extreme stacks of caffeine for others.",
+       d:["It was mostly a comparison of how each drink affects people differently."]},
+      {t:"Cookie dough, air fryers and homemade bagels", g:"food",
+       s:"A baking evening: heat-treated flour for safe raw dough, air fryer evangelism and a full bagel recipe.",
+       d:["The tip was to heat the flour in a microwave or pan until slightly golden. One member makes eggless cookies in the air fryer, and shared a bagel method: let the dough rise, boil briefly in sugar and baking soda water, then add egg wash and sesame seeds.","A newcomer said every time they open the group they end up hungry."]},
+      {t:"A rules question", g:"rules",
+       s:"A member asked if their message had broken the group rules and apologised to the admin.",
+       d:["A message from another member was deleted by the admin that morning."]}
+    ]},
+    {id:14, label:"14 Nov", count:184, tag:"Meet offline, plan a drive, and the loneliness economy", threads:[
+      {t:"Meet outside the chat", g:"community",
+       s:"The organiser said food photos are nice but meeting in person is the point.",
+       d:["She said Bangalore is full of lonely people who can be lonely together in person. A group of women from the chat planned to meet the next morning at a heritage restaurant."]},
+      {t:"A drive plan and a poll", g:"community",
+       s:"A member proposed a day trip to Savandurga or DD Hills instead of Nandi Hills.",
+       d:["The poll: 2 members with cars, 6 with bikes and 9 who needed a seat. One member offered four spare seats. The organiser asked everyone who voted whether they would actually go."]},
+      {t:"Paid run clubs and the loneliness economy", g:"debate",
+       s:"A newcomer found most run clubs are paid, which led to a talk about monetised loneliness.",
+       d:["Views: paying to run is “unnecessary capitalism”, half of Bangalore is the same, and loneliness is the next big market (dating apps already sell it). The newcomer said they want a community to be social and network, not just date."]},
+      {t:"Friendship, dating and being approachable", g:"debate",
+       s:"Members said it is hard to find genuine friends when everyone seems to be after something.",
+       d:["One member suggested trying to know women as people first rather than aiming to date. Another said men bond over sports but are otherwise emotionally stunted. One member said arranged marriage was starting to look attractive."]},
+      {t:"Games, commutes and weekend plans", g:"city",
+       s:"Game recommendations and a long gripe about traffic around Whitefield, Outer Ring Road and Bellandur.",
+       d:["Recommended single-player games included Witcher 3, Red Dead Redemption and Horizon Zero Dawn, and a football community was mentioned. People preferred places near Eco Space and Third Wave for after-work meetups."]}
+    ]},
+    {id:15, label:"15 Nov", count:276, tag:"Polls to map the group, horror picks, and movie debates", threads:[
+      {t:"Where do you live, and how old are you?", g:"community",
+       s:"Polls to help people meet nearby.",
+       d:["Localities: HSR (5), Indiranagar (4), Whitefield (3), Bellandur (2), plus a second poll where South Bangalore led with 5, Central 2, North 1. Ages: 24 to 26 had 10 votes, 21 to 23 had 7, 27 to 30 had 4, 30 plus had 2 and no one was 18 to 20. A playful poll on the first letter of your name also ran."]},
+      {t:"Horror recommendations", g:"culture",
+       s:"A member asked for horror movies, and Turkish, Korean and Japanese titles got the most love.",
+       d:["Picks: Dabbe: The Possession, The Wailing, Exhuma and Noroi: The Curse. One member said Dabbe affected them for days."]},
+      {t:"Do Indian audiences reward “slop”?", g:"debate",
+       s:"A discussion about scripted movies turned into an argument about audience taste.",
+       d:["One view: audiences who prefer escape reward formulaic films, which creates incentives for more of them. Others said Malayalam cinema is consistently good, Tamasha deserved more love, and Poor Things reads differently to different viewers. A side debate compared stage acting with on-camera acting."]},
+      {t:"Anime opinions and music taste", g:"culture",
+       s:"Some preferred Western animation, others defended anime, and music tastes ranged from grunge to metal.",
+       d:["Sports anime Haikyuu was praised for not overselling. Members said they would go to a Hans Zimmer candlelight concert the next weekend."]},
+      {t:"Chole kulche and lassi", g:"food",
+       s:"A Delhi-style chole kulche place got a long endorsement.",
+       d:["The tip was to try the lassi and falooda from the counter next door."]}
+    ]},
+    {id:16, label:"16 Nov", count:236, tag:"House rules, moon bathing, and a safety-app survey", threads:[
+      {t:"Self-promotion needs admin approval", g:"rules",
+       s:"After someone introduced their services, the organiser asked people not to self-promote without telling the admins.",
+       d:["Later she reiterated that sharing something is fine if you let the admins know. Introductions from a photographer, a digital artist and others were welcomed."]},
+      {t:"Moon bathing", g:"culture",
+       s:"A thread about whether moon bathing is wellness, a cult or just resting under the stars.",
+       d:["Members were sceptical, asked who actually believes in it, and noted that the article was aimed at women, while the organiser asked when centring yourself became a woman-only thing. Several said it sounded like resting under the stars. The jokes escalated from there."]},
+      {t:"A survey on unsafe areas in Bangalore", g:"city",
+       s:"A member researching an app to report unsafe areas and petty crime asked members to fill in a form.",
+       d:["The organiser shared it with eight women’s groups she is in and said any such shares should go through the admins."]},
+      {t:"Meetup status and paid meetups", g:"community",
+       s:"Members asked who plans meetups. The organisers host weekends, and weekday plans are open to anyone.",
+       d:["A member shared a Reddit meetups post that charged for entry and complained about it. One member was removed after their messages were deleted by the admin."]}
+    ]},
+    {id:17, label:"17 Nov", count:988, tag:"The busiest day: newcomers, karma, banter, and a late-night recap idea", threads:[
+      {t:"Reddit karma and posting for the group", g:"community",
+       s:"The organiser asked for more volunteers to post on her behalf, which led to a talk about what karma means.",
+       d:["Members said karma is about legitimacy and exposure, a good account is about 1,000 plus, and one rage-bait post can get you there, so it is not a good metric."]},
+      {t:"The “anomaly” poll", g:"debate",
+       s:"A joking thread about the default human being a woman and men being “an anomaly” led to a poll.",
+       d:["Results: 29 “an anomaly”, 13 “girlypop” and 8 for a third option. Some members joked back, one asked what an anomaly meant, and it stayed mostly lighthearted."]},
+      {t:"Urbex, tattoos and photo spots", g:"city",
+       s:"Interest in urban exploration, plus tips for tattoos and a family photoshoot location.",
+       d:["An experienced member said urbex needs good planning. A tattoo studio in Indiranagar was recommended for its custom touch and stories. For a family photoshoot, a botanical garden and a hotel’s grand interiors were suggested, with advice to ask if shoots are allowed. A member also said several people they know caught dengue in the city."]},
+      {t:"A wave of newcomers", g:"community",
+       s:"New members asked what the group is for, whether there are meetups, and if they should introduce themselves.",
+       d:["The organiser said there are meetups every weekend, anyone can plan weekday ones, and they are on a break right now. Existing members asked the organiser to share message history for the new people."]},
+      {t:"Wary of run clubs", g:"city",
+       s:"One member avoids run clubs that they have heard are cliquey and dating-focused, and another said everything in the city is business.",
+       d:["A member asked about sports activities like cricket, running or badminton. Someone asked who plays badminton."]},
+      {t:"Evening banter: games, performative men and Godzilla", g:"culture",
+       s:"Childhood games, a self-described “6 foot 4 feminist” prompting performative-male jokes, football banter, flirting etiquette and sci-fi books.",
+       d:["Kho kho and ice water injury stories, then jokes about Murakami becoming Dostoevsky and arriving at the next meetup dressed “performative”. A fan debate about Godzilla Minus One and Shin Godzilla followed, and football rivalry banter went on in parallel.","On flirting, one view was that complimenting someone’s DP is not “game”. Others said starting conversations without pressure and building shared activities works better. The night ended with book talk: 3 Body Problem, Sun Eater, Red Rising and Recursion."]},
+      {t:"A request to be more polite", g:"rules",
+       s:"Around 7:16 PM, a member said the group should be more polite. The organiser agreed.",
+       d:["It came as many new members joined and the chat grew faster."]},
+      {t:"The late-night recap idea", g:"tech",
+       s:"After 11 PM, members asked for a recap of 500 plus unread messages, and the chat was exported and summarised.",
+       d:["The idea of a daily or weekly “BLR Brats Wrapped” with points for being funny came up, along with ways to automate it. The sticking point was getting the export automatically. One member was removed shortly before midnight."]}
+    ]},
+    {id:18, label:"18 Nov", count:459, tag:"A midnight round of controversial opinions", threads:[
+      {t:"Controversial opinions round", g:"debate",
+       s:"Around midnight, the group traded “controversial” opinions and several turned into long arguments.",
+       d:["Topics: poverty and population, whether democracy should limit who votes, marriage renewals every 5 or 10 years, what religion does, the water used by data centres, who women find attractive, simping versus confidence, and whether Marvel is mid."]},
+      {t:"Poverty, children and personal responsibility", g:"debate",
+       s:"The sharpest argument of the ten days. See the debate panel below.",
+       d:["It ended with one participant calling for “agree to disagree” and another leaving to sleep."]},
+      {t:"Dating dynamics and attraction", g:"debate",
+       s:"Whether attraction is subjective, whether women describe what they already like, and where confidence ends and clinginess starts.",
+       d:["Several members stressed that accepting a “no” is the clearest sign of respect. One member warned another that their framing was moving towards “redpill” talk. Others said looks open the door and personality decides the rest."]},
+      {t:"Biryani, Bengali politics and Japanese lessons", g:"food",
+       s:"Lighter threads ran alongside: a Hyderabadi biryani dislike, a Kolkata member who never had Kolkata biryani, and a member preparing for the JLPT N5.",
+       d:["The N5 exam focuses on basic reading and listening with about 100 kanji. The member takes weekend batches at a language academy in the city."]},
+      {t:"Reaction to the recap", g:"rules",
+       s:"In the morning, people who missed the night asked for a summary. Some said they would rather people read the chat than use AI for it.",
+       d:["The organiser agreed. Another member asked someone who had been online to write a short summary by hand."]}
+    ]}
+  ];
+
+  var DEBATES = [
+    {k:"evolution", title:"Are humans done evolving?",
+     positions:[
+       {h:"Biology is still moving", p:"Lifestyle shifts such as desk work and abundant food could change how our bodies store fat, even if it takes generations."},
+       {h:"We are at the end of the road", p:"AI is already reducing how much people think and, soon, how much they do physically. Research on cognitive offloading was cited."},
+       {h:"It takes far longer than we think", p:"Real evolution takes thousands of generations, so the question has no near-term answer."}],
+     outcome:"It stayed hypothetical and ended in jokes, with the organiser still asking for a hopeful path."},
+    {k:"grace", title:"Judging people with grace",
+     positions:[
+       {h:"Judgement is natural", p:"We are wired to judge, so the goal is to keep updating when new information appears."},
+       {h:"Motives matter", p:"A poor person stealing to eat is not the same as a rich person who is greedy. Intent, power and necessity all count."},
+       {h:"Be careful with “evil is evil”", p:"Treating every wrong the same ignores survival and context, and can excuse real harm."}],
+     outcome:"Participants said they agreed on parts, disagreed on scale and intent, and left it there politely."},
+    {k:"poverty", title:"Poverty, children and personal responsibility",
+     positions:[
+       {h:"Intent and effort matter", p:"One side argued that people who cannot earn a living should not have children, and that work is available for anyone willing to do it."},
+       {h:"Poverty is structural", p:"The other side said children are the only social security for many poor families, that exploitation by the state and caste and feudal histories created the situation, and that “plan better” misses the reality."},
+       {h:"Many escape poverty", p:"A third voice noted that plenty of children from very poor families lift their whole family out of poverty."}],
+     outcome:"A suggestion that people below the poverty line be sterilised drew strong objections, including comparisons to genocide and accusations of being out of touch with how poor families live. It closed with “agree to disagree”."},
+    {k:"dating", title:"Attraction, “type” and being a good guy",
+     positions:[
+       {h:"Standards are fine", p:"Describing your type is just being honest, and high standards are good for everyone."},
+       {h:"Looks open the door", p:"Looks may get a foot in the door but personality determines everything after."},
+       {h:"Respect means hearing no", p:"Several said confident behaviour includes taking no for an answer and leaving the person alone."}],
+     outcome:"Several agreed that accepting a “no” is basic respect, and one member noted that harsh judgement of women comes from both men and women."}
+  ];
+
+  var state = {day:null, themes:new Set(), q:""};
+  var $ = function(id){return document.getElementById(id)};
+
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]})}
+  function hl(text,q){
+    var safe = esc(text);
+    if(!q) return safe;
+    var re = new RegExp("(" + q.replace(/[.*+?^${}()|[\]\\]/g,"\\$&") + ")","ig");
+    return safe.replace(re,"<mark>$1</mark>");
+  }
+
+  function buildStrip(){
+    var max = Math.max.apply(null, DAYS.map(function(d){return d.count}));
+    var wrap = $("days");
+    DAYS.forEach(function(d){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "day"; b.setAttribute("aria-pressed","false");
+      b.dataset.id = d.id;
+      b.setAttribute("aria-label", d.label + ", " + d.count + " messages");
+      var h = Math.max(10, Math.round(d.count / max * 120));
+      b.innerHTML = "<span class=\"n\">" + d.count + "</span><span class=\"bar\" style=\"--h:" + h + "px\"></span><span class=\"d\">" + d.label.replace(" Nov","") + "</span>";
+      b.addEventListener("click", function(){
+        state.day = (state.day === d.id) ? null : d.id;
+        render();
+      });
+      wrap.appendChild(b);
+    });
+    $("all-days").addEventListener("click", function(){state.day = null; render();});
+  }
+
+  function buildChips(){
+    var wrap = $("chips");
+    Object.keys(THEMES).forEach(function(k){
+      var c = document.createElement("button");
+      c.type = "button"; c.className = "chip"; c.setAttribute("aria-pressed","false");
+      c.dataset.k = k; c.style.setProperty("--dot","var(--c-" + k + ")");
+      c.innerHTML = "<i></i>" + THEMES[k];
+      c.addEventListener("click", function(){
+        if(state.themes.has(k)) state.themes.delete(k); else state.themes.add(k);
+        render();
+      });
+      wrap.appendChild(c);
+    });
+  }
+
+  function matches(th){
+    if(state.themes.size && !state.themes.has(th.g)) return false;
+    if(state.q){
+      var hay = (th.t + " " + th.s + " " + th.d.join(" ") + " " + THEMES[th.g]).toLowerCase();
+      if(hay.indexOf(state.q.toLowerCase()) === -1) return false;
+    }
+    return true;
+  }
+
+  function render(){
+    document.querySelectorAll(".day").forEach(function(b){
+      b.setAttribute("aria-pressed", String(Number(b.dataset.id) === state.day));
+    });
+    document.querySelectorAll(".chip").forEach(function(c){
+      c.setAttribute("aria-pressed", String(state.themes.has(c.dataset.k)));
+    });
+    var note = state.day ? ("Showing " + DAYS.filter(function(d){return d.id===state.day})[0].label + " only.") : "Showing every day. The busiest was 17 Nov.";
+    $("strip-note").textContent = note;
+
+    var out = [], total = 0;
+    DAYS.forEach(function(d){
+      if(state.day && d.id !== state.day) return;
+      var items = d.threads.filter(matches);
+      if(!items.length) return;
+      total += items.length;
+      var html = "<section class=\"day-block\"><div class=\"day-head\"><h2>" + esc(d.label) + "</h2><p>" + esc(d.tag) + "</p></div>";
+      items.forEach(function(th){
+        html += "<details class=\"thread\" style=\"--dot:var(--c-" + th.g + ")\"" + (state.q ? " open" : "") + ">" +
+          "<summary><div class=\"t-top\"><span class=\"t-title\">" + hl(th.t,state.q) + "</span><span class=\"t-tag\">" + esc(THEMES[th.g]) + "</span></div>" +
+          "<p class=\"t-short\">" + hl(th.s,state.q) + "</p><span class=\"t-more\">Read the details</span></summary>" +
+          "<div class=\"t-detail\">" + th.d.map(function(p){return "<p>" + hl(p,state.q) + "</p>"}).join("") + "</div></details>";
+      });
+      html += "</section>";
+      out.push(html);
+    });
+    $("timeline").innerHTML = out.length ? out.join("") : "<p class=\"empty\">Nothing matches those filters. Clear the search, or switch off a theme.</p>";
+    $("status").textContent = total + (total === 1 ? " thread" : " threads") + " shown";
+  }
+
+  function buildDebates(){
+    var tabs = $("tabs");
+    DEBATES.forEach(function(db,i){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "tab"; b.setAttribute("role","tab");
+      b.setAttribute("aria-selected", String(i===0)); b.textContent = db.title;
+      b.addEventListener("click", function(){
+        tabs.querySelectorAll(".tab").forEach(function(t){t.setAttribute("aria-selected","false")});
+        b.setAttribute("aria-selected","true");
+        showDebate(i);
+      });
+      tabs.appendChild(b);
+    });
+    showDebate(0);
+  }
+  function showDebate(i){
+    var db = DEBATES[i];
+    $("debate").innerHTML = "<div class=\"positions\">" + db.positions.map(function(p){
+      return "<div class=\"pos\"><h3>" + esc(p.h) + "</h3><p>" + esc(p.p) + "</p></div>";
+    }).join("") + "</div><p class=\"outcome\"><strong>How it ended.</strong> " + esc(db.outcome) + "</p>";
+  }
+
+  $("q").addEventListener("input", function(e){state.q = e.target.value.trim(); render();});
+  buildStrip(); buildChips(); buildDebates(); render();
+})();
+</script>
+</body>
+</html>
