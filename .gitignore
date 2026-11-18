@@ -1,0 +1,4 @@
+# Raw WhatsApp exports hold real names and phone numbers. They stay on this machine.
+# Only the anonymised output in chat/ is published.
+exports/
+.DS_Store

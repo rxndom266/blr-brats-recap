@@ -36,6 +36,10 @@ button{font-family:inherit}
 .hero{text-align:center;padding:28px 0 36px}
 .hero h1{margin:14px 0 0;font-family:var(--display);font-weight:400;line-height:.92;font-size:clamp(4rem,19vw,10.5rem);letter-spacing:.005em}
 .hero h1 .bar{display:block;width:fit-content;margin:8px auto 0;background:var(--ink);color:var(--sky);padding:.02em .18em .06em;font-size:.62em;line-height:1}
+.toplink{color:var(--ink);text-decoration:none;border-bottom:3px solid var(--ink)}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:28px}
+.cta-row .cta{margin-top:0}
+.cta.alt{background:var(--paper);color:var(--ink);text-decoration:none}
 .hero .hand{font-size:clamp(1.5rem,5vw,2.3rem);margin-top:22px;position:relative;left:2%}
 .hero-num{margin:26px 0 0;font-family:var(--display);color:var(--red);font-size:clamp(5rem,26vw,15rem);line-height:.9}
 .hero-unit{margin:4px 0 0;font-weight:800;font-size:clamp(1.05rem,3.4vw,1.5rem);letter-spacing:-.01em}
@@ -72,9 +76,8 @@ section.block{padding-top:72px}
 .sticker{position:absolute;top:-12px;right:-8px;transform:rotate(7deg);background:var(--red);color:#fff;border:2px solid var(--ink);font-weight:800;font-size:.68rem;letter-spacing:.09em;padding:5px 8px;border-radius:4px;text-transform:uppercase}
 .sticker.q{background:var(--ink);color:var(--sky);transform:rotate(-6deg)}
 
-.extras{margin-top:28px;display:grid;gap:16px;grid-template-columns:1fr}
-@media(min-width:720px){.extras{grid-template-columns:repeat(3,1fr)}}
-.xcard{text-align:left;background:var(--paper);border:3px solid var(--ink);border-radius:4px;padding:16px;cursor:pointer;display:flex;flex-direction:column;gap:8px;box-shadow:5px 5px 0 var(--ink);transition:transform .12s,box-shadow .12s;color:var(--ink)}
+.extras{margin-top:28px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.xcard{text-decoration:none;text-align:left;background:var(--paper);border:3px solid var(--ink);border-radius:4px;padding:16px;cursor:pointer;display:flex;flex-direction:column;gap:8px;box-shadow:5px 5px 0 var(--ink);transition:transform .12s,box-shadow .12s;color:var(--ink)}
 .xcard:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
 .xcard b{font-family:var(--display);font-weight:400;font-size:1.9rem;line-height:1}
 .xcard span.go{font-weight:800;font-size:.9rem;color:var(--red-deep)}
@@ -93,17 +96,18 @@ section.block{padding-top:72px}
 .day-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding-bottom:8px;border-bottom:4px solid var(--ink)}
 .day-head h3{margin:0;font-family:var(--display);font-weight:400;font-size:2.2rem;line-height:1}
 .day-head p{margin:0;font-weight:500}
+.day-head .readchat{margin-left:auto;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:8px 14px;font-weight:800;font-size:.8rem;cursor:pointer;align-self:center}
 details.thread{border-left:8px solid var(--dot);border-bottom:2px solid var(--ink);margin:0}
 details.thread summary{list-style:none;cursor:pointer;padding:14px 12px 14px 16px;display:block}
 details.thread summary::-webkit-details-marker{display:none}
 details.thread summary:hover{background:#f3f3f3}
 .t-top{display:flex;gap:10px;align-items:baseline;justify-content:space-between}
-.t-title{font-weight:800;font-size:1.12rem;letter-spacing:-.01em}
+.t-title{font-weight:800;font-size:1.12rem;letter-spacing:-.01em;display:flex;gap:10px;align-items:baseline}
+.pm::before{content:"+";font-family:var(--body);font-weight:800;font-size:1.25rem;line-height:.9;display:inline-block;width:1ch;text-align:center}
+details[open] .pm::before{content:"\2013"}
 .t-tag{font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.t-short{margin:4px 0 0;max-width:68ch}
-.t-more{font-size:.85rem;font-weight:800;color:var(--red-deep);margin-top:6px;display:inline-block}
-details[open] .t-more{display:none}
-.t-detail{padding:0 16px 18px 16px;max-width:68ch}
+.t-short{margin:0 0 10px;max-width:68ch;font-weight:700}
+.t-detail{padding:2px 16px 18px 46px;max-width:76ch}
 .t-detail p{margin:0 0 10px}
 mark{background:var(--butter);color:inherit;padding:0 2px}
 .empty{padding:36px 8px}
@@ -184,6 +188,7 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
 .btns{display:flex;flex-direction:column;gap:10px;margin-top:18px;align-items:flex-start}
 .btn{background:var(--fg);color:var(--bg);border:3px solid var(--fg);border-radius:999px;padding:13px 22px;font-weight:800;font-size:16px;cursor:pointer}
 .btn.alt{background:transparent;color:var(--fg)}
+.chatbtn{margin-top:4px}
 .hint{margin:10px 0 0;font-weight:700;font-size:14px;opacity:.85}
 
 /* debates, rules, questions */
@@ -212,6 +217,38 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
 .fs .fv{font-family:var(--display);font-size:clamp(30px,10cqw,46px);line-height:1;margin-top:4px;color:var(--hi)}
 .fs .fv small{display:block;font-family:var(--body);font-weight:700;font-size:.34em;color:var(--fg);margin-top:4px;line-height:1.2}
 
+
+/* ---------- the actual chat ---------- */
+.chat{border:3px solid var(--ink);border-radius:18px;padding:0;margin:auto;width:min(720px,calc(100vw - 24px));height:min(88dvh,860px);max-width:none;max-height:none;color:var(--ink);background:#fff;box-shadow:8px 8px 0 var(--ink);overflow:hidden}
+.chat[open]{display:flex;flex-direction:column}
+.chat::backdrop{background:rgba(10,10,10,.86)}
+@media(max-width:640px){.chat{width:100vw;height:100dvh;border:0;border-radius:0;box-shadow:none}}
+.chat-h{flex:none;background:var(--sky);border-bottom:3px solid var(--ink);padding:14px 16px 12px;display:grid;gap:10px}
+.chat-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.chat-title{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,6vw,2.4rem);line-height:1}
+.chat-x{flex:none;width:40px;height:40px;border-radius:50%;border:3px solid var(--ink);background:var(--ink);color:#fff;font-size:1.05rem;font-weight:800;cursor:pointer;display:grid;place-items:center}
+.chat-note{margin:0;font-size:.82rem;font-weight:500;line-height:1.35}
+.chat-tools{display:flex;gap:8px;align-items:center}
+.chat-tools .search{padding:9px 12px;border-width:2px;border-radius:10px;flex:1;min-width:0;font-size:.95rem}
+.chat-nav{flex:none;width:40px;height:40px;border-radius:10px;border:2px solid var(--ink);background:#fff;font-weight:800;font-size:1.1rem;cursor:pointer}
+.chat-nav:disabled{opacity:.3;cursor:default}
+.chat-count{margin:0;font-size:.78rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.chat-body{flex:1;overflow-y:auto;padding:6px 16px 28px;overscroll-behavior:contain;background:#fff}
+.chat-list{list-style:none;margin:0;padding:0}
+.chat-grp{padding-top:14px}
+.chat-who{display:flex;align-items:baseline;gap:8px;margin-bottom:3px}
+.who{display:inline-flex;align-items:center;gap:7px;background:var(--c);border:2px solid var(--ink);border-radius:999px;padding:1px 11px 1px 2px;font-weight:800;font-size:.78rem;line-height:1.5;color:var(--ink);text-decoration:none}
+.who:hover{background:var(--butter)}
+.cav{flex:none;width:22px;height:22px;border:2px solid var(--ink);border-radius:6px;overflow:hidden;background:#fff}
+.cav svg{display:block;width:100%;height:100%}
+.chat-meta{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.chat-toggle{font-size:.78rem;font-weight:800;display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.chat-toggle input{width:16px;height:16px;accent-color:var(--ink)}
+.chat-who time{font-size:.74rem;font-weight:700;color:#555}
+.chat-msg{margin:0 0 3px;padding-left:4px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.98rem;line-height:1.45}
+.chat-msg.ph{font-style:italic;color:#555}
+.chat-msg-note{padding:28px 4px;font-weight:700}
+
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   .a{opacity:1;transform:none;animation:none}
@@ -225,18 +262,21 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
 <body>
 <div id="page">
   <div class="page">
-    <div class="topbar"><span>BLR Brats</span><span>9 to 18 Nov</span></div>
+    <div class="topbar"><span>BLR Brats</span><a class="toplink" href="people.html">Meet the people →</a></div>
     <header class="hero">
       <span class="kick">The anonymised recap</span>
       <h1>BLR Brats<span class="bar">Wrapped</span></h1>
       <p class="hand">↑ for free, forever</p>
       <p class="hero-num" id="hero-num">3,655</p>
       <p class="hero-unit">messages in ten days.</p>
-      <p class="hero-sub">Every day gets its own Wrapped. Tap through the whole thing, or skip to the day you missed .... okay?</p>
-      <button class="cta" id="play" type="button">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>
-        Press play
-      </button>
+      <p class="hero-sub">Press play for the last three days, or pick any day below. Every day gets its own Wrapped .... okay?</p>
+      <div class="cta-row">
+        <button class="cta" id="play" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>
+          Press play
+        </button>
+        <a class="cta alt" href="people.html">Meet the people</a>
+      </div>
     </header>
   </div>
   <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
@@ -265,10 +305,24 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
     </section>
 
     <footer>
-      <p>This page is a summary written by an AI from an exported copy of the group chat. It uses no names or phone numbers and leaves out personal details, so it can still contain mistakes or miss context, and it is not an official record. If you share it beyond group members, check with the group admins first.</p>
+      <p>This page is a summary written by an AI from an exported copy of the group chat. It uses no names or phone numbers and leaves out personal details, so it can still contain mistakes or miss context, and it is not an official record. The chat excerpts use made-up labels, and links, numbers and self-introductions are stripped automatically, which is a best effort and not a guarantee. If you share it beyond group members, check with the group admins first.</p>
     </footer>
   </main>
 </div>
+
+<dialog class="chat" id="chat" aria-labelledby="chat-title">
+  <div class="chat-h">
+    <div class="chat-top"><h2 class="chat-title" id="chat-title">The actual chat</h2><button class="chat-x" id="chat-close" type="button" aria-label="Close the chat">✕</button></div>
+    <p class="chat-note">Names are swapped for made-up labels. Links, phone numbers, handles and self-introductions are removed. Spelling and punctuation are tidied, tick “Show as typed” for the originals. It is still real chat, so please don’t screenshot and pass people’s messages around.</p>
+    <div class="chat-tools">
+      <button class="chat-nav" id="chat-prev" type="button" aria-label="Previous day">←</button>
+      <input class="search" id="chat-q" type="search" placeholder="Search this day" aria-label="Search this day’s messages">
+      <button class="chat-nav" id="chat-next" type="button" aria-label="Next day">→</button>
+    </div>
+    <div class="chat-meta"><p class="chat-count" id="chat-count" aria-live="polite"></p><label class="chat-toggle"><input type="checkbox" id="chat-raw"> Show as typed</label></div>
+  </div>
+  <div class="chat-body" id="chat-body" tabindex="0"><ol class="chat-list" id="chat-list"></ol></div>
+</dialog>
 
 <div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="BLR Brats Wrapped">
   <div class="deck">
@@ -285,6 +339,7 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
   <p class="sr" id="live" aria-live="polite"></p>
 </div>
 
+<script src="avatar.js"></script>
 <script>
 (function(){
   var THEMES = {
@@ -570,6 +625,7 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
       '<p '+A(3,"unit")+'>messages</p>'+
       '<p '+A(4,"hand")+'>↑ '+esc(NOTES[d.id])+'</p>'+
       '<p '+A(5,"tagline")+'>'+esc(d.tag)+'</p>'+
+      '<div '+A(6,"btns chatbtn")+'><button class="btn alt" type="button" data-act="chat" data-date="'+dateOf(d)+'">Read the actual chat</button></div>'+
     '</div>';
   }
 
@@ -629,7 +685,8 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
     var next = DAYS[idx+1];
     var btns = next
       ? '<button class="btn" type="button" data-act="goto" data-to="day-'+next.id+'">Next: '+esc(next.label)+' →</button>'
-      : '<button class="btn" type="button" data-act="goto" data-to="debates">On to the debates →</button>';
+      : '<button class="btn" type="button" data-act="advance">Keep going →</button>';
+    btns += '<button class="btn alt" type="button" data-act="chat" data-date="'+dateOf(d)+'">Read the actual chat</button>';
     btns += '<button class="btn alt" type="button" data-act="home">Back to all days</button>';
     return okayHTML('That was '+esc(d.label), '<div '+A(1,"btns")+'>'+btns+'</div>');
   }
@@ -673,35 +730,41 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
   function introSlide1(){
     return okayHTML('Catch up on the chat', '<p '+A(1,"hint")+'>Tap right to start →</p>');
   }
+  var RECENT = DAYS.slice(-3);
+  var RTOTAL = RECENT.reduce(function(a,d){return a+d.count},0);
+  var WORDS = {1:"one",2:"two",3:"three"};
   function introSlide2(){
+    var n = RECENT.length;
     return '<div class="inner">'+
-      '<span '+A(0,"kick")+'>9 to 18 Nov</span>'+
-      '<p '+A(1,"bignum")+'><span class="count" data-to="'+TOTAL+'" data-fmt="1">'+fmt(TOTAL)+'</span></p>'+
-      '<p '+A(2,"unit")+'>messages in ten days</p>'+
-      '<p '+A(3,"hand")+'>↑ about '+Math.round(AVG)+' a day</p>'+
-      '<p '+A(4,"tagline")+'>Written by an AI from an export of the chat. Names and phone numbers left out.</p>'+
+      '<span '+A(0,"kick")+'>'+esc(RECENT[0].label)+' to '+esc(RECENT[n-1].label)+'</span>'+
+      '<p '+A(1,"bignum")+'><span class="count" data-to="'+RTOTAL+'" data-fmt="1">'+fmt(RTOTAL)+'</span></p>'+
+      '<p '+A(2,"unit")+'>messages in the last '+(WORDS[n]||n)+' days</p>'+
+      '<p '+A(3,"hand")+'>↑ about '+Math.round(RTOTAL/n)+' a day</p>'+
+      '<p '+A(4,"tagline")+'>Written by an AI from an export of the chat. Names and phone numbers left out. Pick any day on the home page for the rest.</p>'+
     '</div>';
   }
-  function finaleSlide(){
-    var c = {}, threads = 0;
-    DAYS.forEach(function(d){d.threads.forEach(function(t){c[t.g]=(c[t.g]||0)+1; threads++})});
+  function finaleSlide(subset, kick, extraCell, buttons){
+    var c = {}, threads = 0, total = 0;
+    subset.forEach(function(d){total += d.count; d.threads.forEach(function(t){c[t.g]=(c[t.g]||0)+1; threads++})});
     var top = THEME_KEYS.slice().sort(function(a,b){return (c[b]||0)-(c[a]||0)})[0];
+    var byc = subset.slice().sort(function(a,b){return b.count-a.count}), busy = byc[0], quiet = byc[byc.length-1];
     function cell(l,v,sub,i){return '<div '+A(i,"fs")+'><div class="fl">'+l+'</div><div class="fv">'+v+(sub?'<small>'+sub+'</small>':'')+'</div></div>'}
     return '<div class="inner">'+
-      '<span '+A(0,"kick")+'>Your ten days</span>'+
+      '<span '+A(0,"kick")+'>'+esc(kick)+'</span>'+
       '<h2 '+A(1,"disp")+'>Wrapped. Done.</h2>'+
       '<div class="fgrid">'+
-        cell('Messages', fmt(TOTAL), '', 2)+
+        cell('Messages', fmt(total), '', 2)+
         cell('Threads recapped', threads, '', 3)+
-        cell('Busiest day', esc(BUSIEST.label), fmt(BUSIEST.count)+' messages', 4)+
-        cell('Quietest day', esc(QUIETEST.label), fmt(QUIETEST.count)+' messages', 5)+
-        cell('Top vibe overall', c[top]+' threads', esc(THEMES[top]), 6)+
-        cell('Debates', DEBATES.length, 'worth reading', 7)+
+        cell('Busiest day', esc(busy.label), fmt(busy.count)+' messages', 4)+
+        cell('Quietest day', esc(quiet.label), fmt(quiet.count)+' messages', 5)+
+        cell('Top vibe', c[top]+' threads', esc(THEMES[top]), 6)+
+        extraCell+
       '</div>'+
       '<p '+A(8,"okay")+' style="font-size:clamp(26px,9cqw,44px)">Be there and stay friends<em>.... okay?</em></p>'+
-      '<div '+A(9,"btns")+'><button class="btn" type="button" data-act="goto" data-to="intro">Replay</button><button class="btn alt" type="button" data-act="home">Back to all days</button></div>'+
+      '<div '+A(9,"btns")+'>'+buttons+'</div>'+
     '</div>';
   }
+  var FIN_BTNS = '<button class="btn" type="button" data-act="goto" data-to="intro">Replay</button><button class="btn alt" type="button" data-act="home">Back to all days</button>';
 
   /* ================= build the reel ================= */
   var chapters = [];
@@ -723,12 +786,19 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
   chapters.push({id:"debates", label:"Debates", slides:dsl});
   chapters.push({id:"rules", label:"How the group runs", slides:[{pal:WHITE,html:rulesSlide(0)},{pal:WHITE,html:rulesSlide(1)}]});
   chapters.push({id:"questions", label:"Unanswered", slides:[{pal:SKY,html:questionsSlide()}]});
-  chapters.push({id:"finale", label:"The recap", slides:[{pal:INK,html:finaleSlide()}]});
+  chapters.push({id:"finale", label:"The recap", slides:[{pal:INK,html:finaleSlide(DAYS, "All "+DAYS.length+" days", '<div class="a fs" style="--i:7"><div class="fl">Debates</div><div class="fv">'+DEBATES.length+'<small>worth reading</small></div></div>', FIN_BTNS)}]});
+  chapters.push({id:"recent-finale", label:"The recap", slides:[{pal:INK,html:finaleSlide(RECENT, "Your last "+(WORDS[RECENT.length]||RECENT.length)+" days", '<div class="a fs" style="--i:7"><div class="fl">Days</div><div class="fv">'+RECENT.length+'<small>wrapped</small></div></div>', FIN_BTNS)}]});
   var chapIndex = function(id){for(var i=0;i<chapters.length;i++){if(chapters[i].id===id) return i} return -1};
 
   /* ================= viewer ================= */
   var viewer=$("viewer"), stage=$("stage"), slideEl=$("slide"), progEl=$("prog"), chapEl=$("chap"), liveEl=$("live"), pageEl=$("page");
-  var pos = {c:0,s:0}, opener = null, suppressUntil = 0;
+  var pos = {c:0,s:0}, opener = null, suppressUntil = 0, order = [];
+  function setOrder(mode){
+    order = mode==="recent"
+      ? ["intro"].concat(RECENT.map(function(d){return "day-"+d.id}), ["recent-finale"]).map(chapIndex)
+      : chapters.map(function(c,i){return i}).filter(function(i){return chapters[i].id!=="intro" && chapters[i].id!=="recent-finale"});
+  }
+  var modeFor = function(id){return (id==="intro"||id==="recent-finale") ? "recent" : "all"};
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function animateCounts(){
@@ -758,20 +828,22 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
     progEl.innerHTML = ch.slides.map(function(_,i){return '<span class="seg'+(i<=pos.s?' on':'')+'"></span>'}).join("");
     chapEl.textContent = ch.label;
     liveEl.textContent = ch.label + ", slide " + (pos.s+1) + " of " + ch.slides.length;
-    $("prev").disabled = (pos.c===0 && pos.s===0);
-    $("next").disabled = (pos.c===chapters.length-1 && pos.s===ch.slides.length-1);
+    var oi = order.indexOf(pos.c);
+    $("prev").disabled = (oi<=0 && pos.s===0);
+    $("next").disabled = (oi===order.length-1 && pos.s===ch.slides.length-1);
     animateCounts();
   }
   function next(){
-    var ch = chapters[pos.c];
+    var ch = chapters[pos.c], oi = order.indexOf(pos.c);
     if(pos.s < ch.slides.length-1) pos.s++;
-    else if(pos.c < chapters.length-1){pos.c++; pos.s=0; setHash();}
+    else if(oi >= 0 && oi < order.length-1){pos.c = order[oi+1]; pos.s = 0; setHash();}
     else return;
     show();
   }
   function prev(){
+    var oi = order.indexOf(pos.c);
     if(pos.s > 0) pos.s--;
-    else if(pos.c > 0){pos.c--; pos.s = chapters[pos.c].slides.length-1; setHash();}
+    else if(oi > 0){pos.c = order[oi-1]; pos.s = chapters[pos.c].slides.length-1; setHash();}
     else return;
     show();
   }
@@ -779,6 +851,7 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
   function openAt(id, from){
     var i = chapIndex(id); if(i<0) i = 0;
     pos = {c:i,s:0};
+    setOrder(modeFor(chapters[i].id));
     opener = from || document.activeElement;
     viewer.hidden = false; pageEl.inert = true; document.body.classList.add("lock");
     setHash(); show();
@@ -803,7 +876,11 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
       b.textContent = open ? "Hide the details" : "Read the details";
       if(open) det.scrollIntoView({behavior: reduce?"auto":"smooth", block:"nearest"});
     } else if(act==="goto"){
-      var i = chapIndex(b.dataset.to); pos = {c:i<0?0:i, s:0}; setHash(); show();
+      var i = chapIndex(b.dataset.to); if(i<0) i = 0;
+      if(order.indexOf(i) < 0) setOrder(modeFor(chapters[i].id));
+      pos = {c:i, s:0}; setHash(); show();
+    } else if(act==="advance"){next()
+    } else if(act==="chat"){openChat(b.dataset.date)
     } else if(act==="home"){goHome()}
   });
   stage.addEventListener("click", function(e){
@@ -826,7 +903,7 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
   $("close").addEventListener("click", closeViewer);
   viewer.addEventListener("click", function(e){if(e.target===viewer || e.target.classList.contains("deck")) closeViewer()});
   document.addEventListener("keydown", function(e){
-    if(viewer.hidden) return;
+    if(viewer.hidden || chatDlg.open) return;
     if(e.key==="Escape"){closeViewer(); return;}
     if(e.key==="ArrowRight"){next(); return;}
     if(e.key==="ArrowLeft"){prev(); return;}
@@ -862,10 +939,12 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
     var X = [
       {id:"debates", t:"Debates worth reading", s:"Four arguments, laid out side by side.", warn:false},
       {id:"rules", t:"How the group runs", s:"The unwritten rules, now written down.", warn:true},
-      {id:"questions", t:"Questions nobody answered", s:"Still waiting on a reply.", warn:false}
+      {id:"questions", t:"Questions nobody answered", s:"Still waiting on a reply.", warn:false},
+      {id:"people", t:"Meet the people", s:"Made-up names, pixel faces, real group stats.", warn:false, href:"people.html"}
     ];
     $("extras").innerHTML = X.map(function(x){
-      return '<button class="xcard" type="button" data-id="'+x.id+'">'+(x.warn?'<span class="tri">'+TRI+'</span>':'')+'<b>'+esc(x.t)+'</b><span>'+esc(x.s)+'</span><span class="go">Open →</span></button>';
+      var inner = (x.warn?'<span class="tri">'+TRI+'</span>':'')+'<b>'+esc(x.t)+'</b><span>'+esc(x.s)+'</span><span class="go">Open →</span>';
+      return x.href ? '<a class="xcard" href="'+x.href+'">'+inner+'</a>' : '<button class="xcard" type="button" data-id="'+x.id+'">'+inner+'</button>';
     }).join("");
     $("extras").addEventListener("click", function(e){var t = e.target.closest(".xcard"); if(t) openAt(t.dataset.id, t)});
   }
@@ -907,12 +986,11 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
       var items = d.threads.filter(matches);
       if(!items.length) return;
       total += items.length;
-      var html = '<section class="day-block"><div class="day-head"><h3>'+esc(d.label)+'</h3><p>'+esc(d.tag)+'</p></div>';
+      var html = '<section class="day-block"><div class="day-head"><h3>'+esc(d.label)+'</h3><p>'+esc(d.tag)+'</p><button class="readchat" type="button" data-chat="'+dateOf(d)+'">Read the chat</button></div>';
       items.forEach(function(th){
         html += '<details class="thread" style="--dot:'+DOT[th.g]+'"'+(state.q?' open':'')+'>'+
-          '<summary><div class="t-top"><span class="t-title">'+hl(th.t,state.q)+'</span><span class="t-tag">'+esc(THEMES[th.g])+'</span></div>'+
-          '<p class="t-short">'+hl(th.s,state.q)+'</p><span class="t-more">Read the details</span></summary>'+
-          '<div class="t-detail">'+th.d.map(function(p){return '<p>'+hl(p,state.q)+'</p>'}).join("")+'</div></details>';
+          '<summary><div class="t-top"><span class="t-title"><span class="pm" aria-hidden="true"></span><span>'+hl(th.t,state.q)+'</span></span><span class="t-tag">'+esc(THEMES[th.g])+'</span></div></summary>'+
+          '<div class="t-detail"><p class="t-short">'+hl(th.s,state.q)+'</p>'+th.d.map(function(p){return '<p>'+hl(p,state.q)+'</p>'}).join("")+'</div></details>';
       });
       out.push(html+'</section>');
     });
@@ -920,6 +998,71 @@ footer{margin:80px 0 0;padding:20px 0 60px;border-top:4px solid var(--ink);font-
     $("status").textContent = total + (total===1?" thread":" threads") + " shown";
   }
   $("q").addEventListener("input", function(e){state.q = e.target.value.trim(); renderArchive();});
+
+
+  /* ================= the actual chat (dialog) ================= */
+  var chatDlg=$("chat"), chatList=$("chat-list"), chatTitle=$("chat-title"), chatQ=$("chat-q"), chatCount=$("chat-count"), chatBody=$("chat-body");
+  var chatDays=null, chatCache={}, chatDate=null, chatMsgs=[], chatToken=0;
+  var CHIP = ["#a8c5ec","#f4b6d0","#f6e27a","#d9c9f2","#c8ecd2","#ffd0b0"];
+  function dateOf(d){return "2026-11-"+String(d.id).padStart(2,"0")}
+  function chipColor(label){var h=0; for(var i=0;i<label.length;i++) h=(h*31+label.charCodeAt(i))>>>0; return CHIP[h%CHIP.length]}
+  function fetchJSON(url){return fetch(url).then(function(r){if(!r.ok) throw new Error(r.status); return r.json()})}
+  function getDays(){return chatDays ? Promise.resolve(chatDays) : fetchJSON("chat/index.json").then(function(j){return chatDays=j.days})}
+  function getDay(date){return chatCache[date] ? Promise.resolve(chatCache[date]) : fetchJSON("chat/"+date+".json").then(function(j){return chatCache[date]=j.messages})}
+
+  function openChat(date){
+    chatQ.value = "";
+    if(!chatDlg.open){chatDlg.showModal(); document.body.classList.add("lock");}
+    loadChat(date);
+  }
+  function loadChat(date){
+    var tok = ++chatToken;
+    chatDate = date;
+    chatList.innerHTML = '<li class="chat-msg-note">Loading the chat…</li>';
+    chatCount.textContent = "";
+    Promise.all([getDays(), getDay(date)]).then(function(r){
+      if(tok !== chatToken) return;
+      var days = r[0]; chatMsgs = r[1];
+      var i = days.findIndex(function(d){return d.date === date});
+      chatTitle.textContent = (i>=0 ? days[i].label : date) + " · the actual chat";
+      $("chat-prev").disabled = i <= 0;
+      $("chat-next").disabled = i < 0 || i >= days.length-1;
+      $("chat-prev").dataset.date = i>0 ? days[i-1].date : "";
+      $("chat-next").dataset.date = (i>=0 && i<days.length-1) ? days[i+1].date : "";
+      renderChat(true);
+    }).catch(function(){
+      if(tok !== chatToken) return;
+      chatTitle.textContent = "The actual chat";
+      chatList.innerHTML = '<li class="chat-msg-note">Couldn’t load the chat for this day. It may not have been exported yet.</li>';
+      $("chat-prev").disabled = $("chat-next").disabled = true;
+    });
+  }
+  function renderChat(toTop){
+    var q = chatQ.value.trim(), ql = q.toLowerCase();
+    var raw = $("chat-raw").checked, shown = function(m){return raw && m[3] ? m[3] : m[2]};
+    var rows = q ? chatMsgs.filter(function(m){return (shown(m)+" "+m[1]).toLowerCase().indexOf(ql) !== -1}) : chatMsgs;
+    var html = "", last = null;
+    rows.forEach(function(m){
+      if(m[1] !== last){
+        if(last !== null) html += "</li>";
+        html += '<li class="chat-grp"><div class="chat-who"><a class="who" href="people.html#'+window.slugify(m[1])+'" target="_blank" rel="noopener" style="--c:'+chipColor(m[1])+'" title="See this person’s profile"><span class="cav">'+window.pixelAvatar(window.slugify(m[1]), m[1])+'</span>'+esc(m[1])+'</a><time>'+esc(m[0])+'</time></div>';
+        last = m[1];
+      }
+      html += '<p class="chat-msg'+(/^\[[^\]]+\]$/.test(m[2])?' ph':'')+'" title="'+esc(m[0])+'">'+hl(shown(m), q)+'</p>';
+    });
+    if(last !== null) html += "</li>";
+    chatList.innerHTML = html || '<li class="chat-msg-note">No messages match that search.</li>';
+    chatCount.textContent = q ? (rows.length + " of " + chatMsgs.length + " messages") : (chatMsgs.length + " messages");
+    if(toTop) chatBody.scrollTop = 0;
+  }
+  $("chat-q").addEventListener("input", function(){renderChat(true)});
+  $("chat-raw").addEventListener("change", function(){renderChat(false)});
+  $("chat-close").addEventListener("click", function(){chatDlg.close()});
+  $("chat-prev").addEventListener("click", function(e){var d=e.currentTarget.dataset.date; if(d) loadChat(d)});
+  $("chat-next").addEventListener("click", function(e){var d=e.currentTarget.dataset.date; if(d) loadChat(d)});
+  chatDlg.addEventListener("click", function(e){if(e.target === chatDlg) chatDlg.close()});
+  chatDlg.addEventListener("close", function(){ if(viewer.hidden) document.body.classList.remove("lock"); });
+  $("timeline").addEventListener("click", function(e){var b = e.target.closest("[data-chat]"); if(b) openChat(b.dataset.chat)});
 
   buildHome(); buildChips(); renderArchive();
   var h = location.hash.replace("#","");

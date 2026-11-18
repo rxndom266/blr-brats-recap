@@ -1,0 +1,300 @@
+{
+ "The Batcave Night Shift": {
+  "tagline": "Wide awake, fully caffeinated, game lore loaded",
+  "persona": "They fire off 220 messages in just three days, mostly quick replies that keep a conversation rolling well past 1 AM. Heavy on greetings, follow-up questions and enthusiastic game talk, with a 💯 ready for anything.",
+  "takes": [
+   "Will happily deep-dive stealth-game boss fights at 1 AM",
+   "Greets newcomers with a warm hello and a question",
+   "Keeps a running leg-day joke going"
+  ]
+ },
+ "Sticker Sensei": {
+  "tagline": "Fluent in reactions, stickers and quiet hype",
+  "persona": "Short, snappy replies are their love language: a well-timed 'Whoa', 'Noted' or sticker lands in nearly every thread. They show up on eight different days and are always up for planning a watch party.",
+  "takes": [
+   "Believes every plan deserves an anime watch party",
+   "Treats 'option' like a favourite word",
+   "Answers with 😭 whenever words fail"
+  ]
+ },
+ "The Footnote Goblin": {
+  "tagline": "Paragraphs, puns and art-history tangents",
+  "persona": "They write the longest messages in the room, usually riffs that start with a painter and end somewhere gloriously unexpected. Quick with a pun, a link, and a dramatic made-up backstory, mostly replying to what others just said.",
+  "takes": [
+   "Can turn any topic into an art-history lecture",
+   "Sources everything, sometimes with a straight face",
+   "Loves a pun stretched past breaking point"
+  ]
+ },
+ "The Biryani Scout": {
+  "tagline": "Past midnight, asking where to eat",
+  "persona": "They are almost entirely a night-time presence, dropping short replies and plenty of 😭 after dark. Curious about food recommendations and quick to laugh along with the group's chaos.",
+  "takes": [
+   "Asks 'which place?' before anything else",
+   "Laughs at jokes via 😭😭",
+   "Posts more after midnight than at lunch"
+  ]
+ },
+ "The Noon Philosopher": {
+  "tagline": "Big questions served with a side of 😂",
+  "persona": "They arrive with thoughtful, longer messages and big 'what do you all think?' prompts, then enjoy watching the group dig in. Warm, earnest and quick with a self-aware laugh.",
+  "takes": [
+   "Asks the deep question over a late breakfast",
+   "Loves a long, structured thought experiment",
+   "Says good morning at 12 PM, no regrets"
+  ]
+ },
+ "The Opening Gambit": {
+  "tagline": "New here, already in the thick of it",
+  "persona": "They joined in with questions and quips, and quickly got stuck into chess talk and cat-name brainstorming. Friendly, a little self-deprecating, and mostly active in the early evening.",
+  "takes": [
+   "Cheerfully admits their chess rating is modest",
+   "Asks 'what do you do?' to start a chat",
+   "Crowdsources names for new pets"
+  ]
+ },
+ "The Chill Walk Captain": {
+  "tagline": "Few words, calm vibes, late-night gamer",
+  "persona": "They keep it short and calm, mostly chiming in late at night with a gentle reply and a 🙂. Not many messages, but happy to chat about games and relaxed walks.",
+  "takes": [
+   "Prefers a chill walk to a rigorous one",
+   "Always up for a console game chat",
+   "Writes tiny, calm replies"
+  ]
+ },
+ "The Citation Needed Runner": {
+  "tagline": "Curious, linky, always asks for sources",
+  "persona": "They ask thoughtful questions and want to read more before forming an opinion, often following up with 'where can I read about this?'. Also shares a running stat or a wildlife clip now and then.",
+  "takes": [
+   "Wants the source before the verdict",
+   "Shares the occasional running update",
+   "Asks the follow-up question nobody else did"
+  ]
+ },
+ "The Organiser": {
+  "tagline": "Starts the plans, hosts the chaos, drops the posters",
+  "persona": "They are the most active voice in the chat, starting threads and keeping everyone laughing, with 😭 as their favourite emoji. Peak energy arrives around 9 PM, often with a poster, a poll or a new idea.",
+  "takes": [
+   "Starts more conversations than anyone",
+   "Loves a 'which option?' poll",
+   "Drops the group's poster updates with flair"
+  ]
+ },
+ "Burst-Mode Bard": {
+  "tagline": "Ten texts a minute, none of them wasted",
+  "persona": "They fire off messages in rapid little bursts, often finishing one thought across five separate texts. Anime references, game jokes and sudden tangents are their home turf, and they jump into whatever topic is live with total commitment. With 170 messages over just 3 days, they are the group's confetti cannon.",
+  "takes": [
+   "Splits one thought into many short messages",
+   "Anime and gaming references on tap",
+   "Will happily sing a theme song when the vibe calls for it"
+  ]
+ },
+ "The 1 AM Quizmaster": {
+  "tagline": "Asks the questions, runs the polls, stays up",
+  "persona": "They are the group's friendly interviewer, with roughly one message in five ending in a question mark. They run polls, ask the follow-up nobody else thought of, and hand out show and food recommendations. Their peak hour is 1 AM, and they still have energy for banter.",
+  "takes": [
+   "Organises polls so people can meet up",
+   "Recommends shows and snacks with enthusiasm",
+   "Is learning a new language and gives updates",
+   "Nominates running jokes for the group record"
+  ]
+ },
+ "Captain Yezz": {
+  "tagline": "Collects toy cars, stickers and replies",
+  "persona": "They keep replies short and warm, with a signature stretched-out 'yezz' and a steady supply of stickers. Their favourite topics are collectibles, vintage gadgets and webtoon debates. They also like to turn a nostalgic theme song into a group singalong.",
+  "takes": [
+   "Proud of a growing die-cast toy car collection",
+   "Loves old gadgets for the design alone",
+   "Settles fictional fights with stickers"
+  ]
+ },
+ "The Handshake Philosopher": {
+  "tagline": "Big questions, bigger anime lists, 🤝 for everyone",
+  "persona": "They bring thoughtful, well-structured questions to a chat that mostly runs on one-liners. They hand out 🤝 emojis generously and light up the moment anime comes up. They answer age-old puzzles with full, reasoned paragraphs.",
+  "takes": [
+   "Settled the chicken-or-egg question with a full argument",
+   "Asks follow-ups to understand rather than to win",
+   "Has a ready top-five anime list"
+  ]
+ },
+ "Kho Kho Kaiju": {
+  "tagline": "Arrived, introduced, and instantly joined the banter",
+  "persona": "They walked in with a polite 'what is this group for?' and were trading jokes within the hour. Their style is breezy and playful, with plenty of 'bro', wilted-rose emojis and a talent for dry one-liners. It all happened in a single evening.",
+  "takes": [
+   "Fan of school-ground sports and the stories that come with them",
+   "Firmly Team Godzilla when the monster movie debate starts",
+   "Has opinions on anime sequels versus originals"
+  ]
+ },
+ "Ten-Calorie Brownie Seeker": {
+  "tagline": "Wry one-liners and a dream of guilt-free dessert",
+  "persona": "They show up across many days with friendly questions and well-timed deadpan. They are curious about plays, outings and what to do on a weekend, and they commit fully to a good brownie joke. They are quick to cheer on other people's plans.",
+  "takes": [
+   "Wants to find good live theatre",
+   "Complains about traffic with real style",
+   "Will join any plan involving dessert"
+  ]
+ },
+ "The XD Bibliophile": {
+  "tagline": "Sci-fi shelves, football banter, ends with XD",
+  "persona": "They have the longest average replies in the group, usually friendly, witty and bookish. They swap sci-fi recommendations, ask for monster-movie timelines and joke about football loyalties. A cheerful 'XD' or 'mate' is never far off.",
+  "takes": [
+   "Always has a book recommendation ready",
+   "Asks for the Godzilla chronology politely",
+   "Supports their football club through thick and thin"
+  ]
+ },
+ "The Open-World Newbie": {
+  "tagline": "New to gaming and happy to say so",
+  "persona": "They are a quiet, honest presence who mostly answers questions and asks a few of their own. Their gaming journey is just starting, with open-world games as the main interest. They are keen to find people to hang out with and play with.",
+  "takes": [
+   "Likes open-world games",
+   "Is curious about how people spend their weekends",
+   "Asks the plain question everyone was wondering"
+  ]
+ },
+ "The Bake-Along Broadcaster": {
+  "tagline": "Live kitchen updates, stickers included, always replying",
+  "persona": "They reply to nearly everything, usually with a quick one-liner, a sticker or a GIF. Their texts often arrive with a photo of whatever experiment is coming out of the kitchen, narrated with cheerful honesty about how it turned out. Across 167 messages in 7 days they kept the vibe warm and the laughs flowing.",
+  "takes": [
+   "Treats every baking attempt as a live broadcast, wins and mystery bakes alike",
+   "Reaches for the crying-laughing emoji faster than most people reach for punctuation",
+   "Drops a random history fact mid-dessert chat and moves on"
+  ]
+ },
+ "The Weeping-Laugh Philosopher": {
+  "tagline": "Deep takes, delivered through a wall of emojis",
+  "persona": "They show up most evenings with a thoughtful take on everyday life, then soften it with a crying emoji or two. They like turning a passing remark into a proper mini-debate, and they tend to round off a point with a joke about it. About a third of their messages carry an emoji, and the vibe stays friendly throughout.",
+  "takes": [
+   "Builds a surprisingly structured argument, then ends it with an emoji",
+   "Compliments a good one-liner by calling the sender the real AI",
+   "Has strong opinions on commute times and the general chaos of the road"
+  ]
+ },
+ "The Gang-Gang Greeter": {
+  "tagline": "Arrived, said hi, was instantly everyone's friend",
+  "persona": "They walked in with a casual hello and were chatting like a regular within minutes. Their texts are short, quick and heavy on slang, with plenty of crying emojis and a very relaxed attitude. In just two days they got stuck into jokes, banter and getting-to-know-you questions.",
+  "takes": [
+   "Opens most replies with a long, drawn-out 'ayooo' energy",
+   "Answers the get-to-know-you questions with total honesty and a laugh",
+   "Has a very firm 'I do my own thing' stance on following instructions"
+  ]
+ },
+ "The Midnight Questioner": {
+  "tagline": "Most alive when the clock hits 1 AM",
+  "persona": "They tend to appear in the quiet hours and fire off short, curious questions, often asking what others are working on or playing. Nearly half their messages land at night, and they keep the back-and-forth going with brisk one-liners. They are easygoing and quick to apologise or cheer when needed.",
+  "takes": [
+   "Asks the follow-up question, then asks another one",
+   "Believes the tool matters less than the craft",
+   "Mentions the game they are currently playing like it is a status update"
+  ]
+ },
+ "The Table-Booking Tour Guide": {
+  "tagline": "Has a restaurant story for every occasion",
+  "persona": "They arrived with one very clear mission: get everyone talking about food. Their messages are friendly, enthusiastic and full of recommendations and stories about memorable meals and food events. They write in quick bursts, with a laughing emoji ready whenever the chat gets silly.",
+  "takes": [
+   "Opens with a food question and lets the conversation do the rest",
+   "Always has a story about a memorable pop-up or tasting event",
+   "Happily invites the group to go eat together"
+  ]
+ },
+ "The Dark-Humour Convener": {
+  "tagline": "Calls the meeting, brings the dramatic questions",
+  "persona": "They show up with big, slightly theatrical conversation starters and a lot of questions, nearly four in ten messages end up being one. They like their heavy topics served with a side of jokes and ask the group to match the tone. They are quick to apologise if they overstep, and quick to bring a fresh topic.",
+  "takes": [
+   "Starts the chat with a headline-sized question and waits for takers",
+   "Prefers the funny version of any serious conversation",
+   "Keeps a deadpan, no-emoji texting style"
+  ]
+ },
+ "The Pet-Pic Helper": {
+  "tagline": "Pet photos in, helpful offers out",
+  "persona": "They settled in with a few photos and a friendly hello, then turned into a quietly useful presence. Their messages are brief and polite, with curious questions about what the group is up to and offers to help when someone needs a lead. They seem to enjoy figuring out what the chat is all about.",
+  "takes": [
+   "Notices every detail in a pet photo and says so",
+   "Offers useful contacts with no fuss",
+   "Asks the honest 'what is this group about?' question"
+  ]
+ },
+ "The Grinning Sidekick": {
+  "tagline": "Teasing with a smile, never with a sting",
+  "persona": "They joined in for one lively afternoon and jumped straight into the banter. Their messages are short and playful, with a grin emoji and a teasing remark never far away. They also chip in practical questions and helpful suggestions when plans come up.",
+  "takes": [
+   "Replies to a brag with a friendly 'show off'",
+   "Asks the practical question the plan was missing",
+   "Has opinions about community events and is happy to share them"
+  ]
+ },
+ "The Watchlist Wrangler": {
+  "tagline": "Has a recommendation and a follow-up question",
+  "persona": "Across 160 messages and nine active days, they are the friendly engine room of the chat, dropping quick, upbeat replies and a steady stream of \"anyone know a good...\" questions. They hop easily between horror films, anime, webtoons and snack hunts, and they cheer on whatever plan is floating by. When a debate heats up they stay thoughtful and explain their reasoning rather than just reacting.",
+  "takes": [
+   "Always collecting recommendations: horror films, webtoons, noodles, weekend plans",
+   "Reaches for the skull emoji whenever something is too funny or too scary",
+   "Happy to throw in a quick \"send location, on my way\""
+  ]
+ },
+ "The 1 AM Kaiju Scholar": {
+  "tagline": "Fluent in monster movies after midnight",
+  "persona": "They arrived like a burst of energy, firing off long, enthusiastic replies and a lot of crying-laughing emojis, with the chat's busiest hour somewhere around 1 AM. They love a deep dive, whether it is giant monsters, mecha anime or the finer points of comfort food, and they answer people one by one with real curiosity. Stickers and \"agreed\" punctuate pretty much everything.",
+  "takes": [
+   "Will happily give a mini-lecture on giant-monster films and mecha anime",
+   "Types \"agreed\" and the crying emoji like punctuation",
+   "Has firm, cheerful food opinions and defends them with a full paragraph"
+  ]
+ },
+ "The GIF Cannon": {
+  "tagline": "Short replies, endless reaction GIFs",
+  "persona": "They keep it quick and punchy, with a dozen GIFs and stickers doing a lot of the talking. They jump into topics with great enthusiasm, whether it is anime favourites, movie picks or a grunge-heavy music list. They are also the one asking when the next meet-up is happening and cheering anyone who says they are in.",
+  "takes": [
+   "Loves anime and has favourite characters they will pledge their loyalty to",
+   "Music taste leans firmly towards classic grunge",
+   "Keeps asking \"when meet ups?\" and pushing for a pizza plan"
+  ]
+ },
+ "The Larp Laureate": {
+  "tagline": "Committed to the bit, especially performatively",
+  "persona": "They showed up politely, shared a form link, and then quickly revealed a gift for running jokes. Their messages are chatty, playful and full of dramatic spelling, especially when they are inventing the most over-the-top aesthetic possible. They also float ideas for sports and run-club style meet-ups.",
+  "takes": [
+   "Proposes cricket, running or padel for the next meet-up",
+   "Wants everyone to turn up gloriously over-styled just to confuse onlookers",
+   "Signs off a late-night thread with a dramatic remark about missing the ghee"
+  ]
+ },
+ "The Single-Player Sage": {
+  "tagline": "Has a game, a score and a watchlist for you",
+  "persona": "They show up in the early evening with calm, helpful messages and a stash of recommendations. Ask about games, horror films or music and they answer with a considered list and an offer to send more. They gently push back on hype, with a soft spot for steady storytelling over flash.",
+  "takes": [
+   "Recommends big, gorgeous single-player games for a chill life",
+   "Soundtrack picks lean towards film scores and metal",
+   "Prefers sports anime and slow-burn thrillers over the hype of the moment"
+  ]
+ },
+ "The Follow-Up Curator": {
+  "tagline": "Asks the question everyone else forgot",
+  "persona": "With a lot of their messages ending in a question mark, they are the chat's resident asker of the thoughtful follow-up. They compliment people's creative work, ask how the maths works out, and happily ask for the first thing to see at a gallery. When food comes up they turn warm and enthusiastic.",
+  "takes": [
+   "Asks \"what's the math?\" about everything, politely",
+   "Gallery and exhibition recommendations make them very happy",
+   "Brings a long, well-structured argument and some receipts"
+  ]
+ },
+ "The Snack Scout": {
+  "tagline": "Sticker first, snack intel second",
+  "persona": "They pop in quietly around the early evening with a sticker, a GIF or a one-line bit of food intel. Their messages are short and friendly, and the best ones involve dessert, pizza nostalgia or a hopeful request for a restaurant location. They join the playful pile-ons with a light touch.",
+  "takes": [
+   "Reports back on good desserts and pizza memories",
+   "Quick to ask for a location when food is mentioned",
+   "Replies with a sticker when words feel like too much effort"
+  ]
+ },
+ "The Handycam Revivalist": {
+  "tagline": "Brings dead gadgets back to life",
+  "persona": "They arrived with a photo of an old camera revived with modern charging and set the tone: curious, practical and a little nostalgic. Their replies are short, helpful and full of tips about where to hunt for old tech and what to check first. They are all about vibes over convenience.",
+  "takes": [
+   "Thinks old handycams beat phones for open-and-record simplicity",
+   "Knows where to find old gadgets and what to haggle over",
+   "Answers a big question with a single word, \"Why\""
+  ]
+ }
+}
