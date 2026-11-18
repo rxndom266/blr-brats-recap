@@ -209,7 +209,9 @@ const nameRules = []; // [regex, replacement]
 const redactions = existsSync(join(EX, "redactions.txt"))
   ? readFileSync(join(EX, "redactions.txt"), "utf8").split("\n").map(s => s.trim()).filter(s => s && !s.startsWith("#")) : [];
 // "word" blanks that word everywhere; "!phrase" drops any whole message containing the phrase.
-const redactRules = redactions.filter(t => !t.startsWith("!")).map(t => new RegExp(esc(t), "gi"));
+// "find => replacement" swaps a phrase for exact text (e.g. a person's label), applied before everything else.
+const replaceRules = redactions.filter(t => t.includes(" => ")).map(t => { const [a, ...b] = t.split(" => "); return [new RegExp(esc(a.trim()), "gi"), b.join(" => ").trim()]; });
+const redactRules = redactions.filter(t => !t.startsWith("!") && !t.includes(" => ")).map(t => new RegExp(esc(t), "gi"));
 const hideRules = redactions.filter(t => t.startsWith("!")).map(t => new RegExp(esc(t.slice(1).trim()), "i"));
 // Self-introductions carry names, ages, areas and jobs, so they are hidden as whole messages.
 const AP = "['\u2019]";
@@ -243,6 +245,7 @@ function scrub(raw) {
   t = t.replace(/@⁨([^⁩\n]{1,60})⁩/g, (_, n) => { const a = aliases[clean(n)]; return "@" + (a || "someone"); });
   t = t.replace(/@\+?\d[\d ]{7,15}/g, "@someone");
   t = t.replace(/[⁦-⁩]/g, "");
+  for (const [re, to] of replaceRules) t = t.replace(re, () => to);
   for (const [re, label] of nameRules) t = t.replace(re, m => (/^\p{Lu}/u.test(m) ? label : m)); // names are capitalised, ordinary words are not
   t = t.replace(GREET_NAME, (all, lead, w) => (/^\p{Lu}/u.test(w) && w.length >= 3 && !dictWords.has(w.toLowerCase()) ? `${lead} [name]` : all));
   t = t.replace(/https?:\/\/(?:www\.)?([^\s/]+)[^\s]*/gi, "[link: $1]").replace(/\b(?:www\.)[^\s]+/gi, "[link]");
