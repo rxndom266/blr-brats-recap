@@ -1,6 +1,6 @@
-# BLR Brats chat recap
+# BLR Brats Wrapped
 
-An anonymised, interactive recap of the BLR Brats group chat (9 to 18 Nov). It is one self-contained file, `index.html`, with no build step and no external dependencies.
+An anonymised, interactive recap of the BLR Brats group chat (9 to 18 Nov). It is one self-contained file, `index.html`, with no build step. It loads three Google Fonts (Anton, Inter, Caveat) and falls back to system fonts if they are blocked.
 
 ## Host it on GitHub Pages
 
